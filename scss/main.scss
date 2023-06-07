@@ -1,0 +1,457 @@
+$black: #000000;
+$gray: #676767;
+$font-weight: 600;
+$thirty: 30px;
+$size: 14px;
+$line-height: 16px;
+$display-flex: flex;
+$display-block: block;
+$align-items: center;
+$relative: relative;
+$absolute: absolute;
+$space-between: space-between;
+$flex-end: flex-end;
+$line-position-top: 18px;
+$property: transform;
+$duration: 0.2s;
+$timing-function: ease-in;
+$width-icon-menu: 18px;
+$none: none;
+$zero: 0px;
+$translate-y: translateY;
+$translate-x: translateX;
+$one-hundred: 100%;
+$fifty: 50%;
+%padding-zero {
+  padding: 0px;
+}
+%opacity-zero {
+  opacity: 0;
+}
+%margin-zero {
+  margin: $zero;
+}
+%margin-auto {
+  margin: auto;
+}
+%letter-spacing-005 {
+  letter-spacing: 0.05em;
+}
+%letter-spacing-02 {
+  letter-spacing: 0.2em;
+}
+%border-line {
+  border-left: 2px solid $black;
+}
+%bottom-zero {
+  bottom: $zero;
+}
+%overflow-hidden {
+  overflow: hidden;
+}
+%max-width {
+  max-width: 600px;
+}
+@mixin transition($property, $duration, $timing-function) {
+  transition: $property $duration $timing-function;
+}
+@mixin display-flex($display-flex, $align-items) {
+  display: $display-flex;
+  align-items: $align-items;
+}
+@mixin font-size($size, $line-height) {
+  font-size: $size;
+  line-height: $line-height;
+}
+@mixin link {
+  color: $gray;
+  text-decoration: $none;
+}
+@mixin transform($translate, $number) {
+  transform: #{$translate }($number);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body,
+h1,
+h2,
+p,
+h3 {
+  @extend %margin-zero;
+}
+body {
+  zoom: 150%;
+  font-family: "Raleway", sans-serif;
+  background-color: #e5e5e5;
+}
+.page {
+  @extend %max-width;
+  min-width: 430px;
+  @extend %margin-auto;
+  padding: {
+    left: $thirty;
+    right: $thirty;
+    bottom: $thirty;
+  }
+  background-color: #ffffff;
+}
+header {
+  position: $relative;
+  padding-bottom: 65px;
+}
+.line {
+  position: $absolute;
+  @extend %border-line;
+}
+.header__line {
+  height: 70px;
+}
+.line--bottom {
+  @extend %bottom-zero;
+}
+.header__title--container {
+  @include display-flex($display-flex, $align-items);
+  justify-content: $space-between;
+}
+h1 {
+  @include font-size(40px, 47px);
+  @extend %letter-spacing-02;
+}
+.title__name {
+  @include font-size(24px, 28px);
+  @extend %letter-spacing-005;
+}
+.title__position {
+  display: $display-flex;
+  justify-content: flex-end;
+  padding-right: 6px;
+  @include font-size($size, $line-height);
+  @extend %letter-spacing-005;
+}
+.photo {
+  border-radius: $fifty;
+}
+main {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: repeat(3, max-content);
+  column-gap: 4vw;
+  row-gap: 30px;
+  margin: {
+    top: 5px;
+    bottom: 34px;
+  }
+  @include font-size(10px, 12px);
+  @extend %letter-spacing-005;
+  color: $gray;
+}
+h2 {
+  font-weight: $font-weight;
+  @include font-size($size, $line-height);
+  @extend %letter-spacing-02;
+  padding-bottom: 5px;
+  color: $black;
+}
+.contact__line {
+  height: 20px;
+  @extend %border-line;
+}
+.contact {
+  li {
+    @include display-flex($display-flex, $align-items);
+    gap: 12px;
+  }
+}
+.contact__list {
+  @extend %padding-zero;
+  @include transform($translate-x, -8px);
+}
+.link {
+  position: $relative;
+  @include link;
+  @extend %overflow-hidden;
+  padding-bottom: 2px;
+  &::before {
+    content: "";
+    position: $absolute;
+    display: $display-block;
+    height: 2px;
+    width: $one-hundred;
+    padding-left: 1px;
+    @extend %bottom-zero;
+    background-color: $black;
+    @include transform($translate-x, $one-hundred);
+    @include transition($property, $duration, $timing-function);
+  }
+  &:hover::before {
+    @include transform($translate-x, $zero);
+  }
+}
+.icon {
+  font-size: 18px;
+  color: $black;
+}
+.codewars-icon {
+  width: 18px;
+}
+li {
+  margin-bottom: 8px;
+}
+.contact__item {
+  @include display-flex($display-flex, $align-items);
+  padding-top: 1px;
+}
+.icon--discord {
+  font-size: $size;
+}
+.list {
+  padding-left: 15px;
+  margin: 5px 0 0;
+}
+.profile-and-courses {
+  grid-row: span 2;
+}
+.profile {
+  margin-bottom: 30px;
+}
+.courses__content,
+.education__content {
+  position: $relative;
+  padding-left: 20px;
+}
+.courses__content:first-of-type {
+  padding-bottom: 10px;
+}
+.courses {
+  li {
+    margin-bottom: 2px;
+  }
+}
+.line--height {
+  height: calc(100% - $line-position-top);
+}
+.line--position {
+  top: $line-position-top;
+  left: 4px;
+}
+.svg {
+  position: $absolute;
+  top: 3px;
+  left: 0;
+}
+h3 {
+  font-weight: $font-weight;
+  @include font-size(11px, 13px);
+  @extend %letter-spacing-02;
+  font-variant: small-caps;
+}
+.courses__title,
+.education__title {
+  padding-bottom: 4px;
+}
+.courses__subtitle {
+  margin-top: 8px;
+}
+.education__date {
+  padding-top: 2px;
+}
+footer {
+  @include display-flex($display-flex, $align-items);
+  justify-content: $space-between;
+  gap: 20px;
+  padding-right: 40px;
+}
+.date {
+  font-size: 10px;
+}
+.item {
+  display: $display-flex;
+}
+.link-rsschool {
+  position: $relative;
+  z-index: 1;
+  a {
+    display: $display-flex;
+    @include transition($property, $duration, $timing-function);
+  }
+  &:hover {
+    a {
+      transform: rotate(360deg) scale(1.5);
+    }
+  }
+}
+.courses__certificate--icon {
+  font-size: 12px;
+}
+.courses__certificate,
+.courses__certificate--link {
+  @include display-flex($display-flex, $align-items);
+}
+.courses__certificate {
+  gap: 4px;
+}
+.courses__certificate--link {
+  @include link;
+  &::after {
+    content: "certificate";
+    padding-left: 4px;
+    font-size: 8px;
+    @extend %opacity-zero;
+    @include transition(opacity, $duration, $timing-function);
+  }
+  &:hover::after {
+    opacity: 1;
+  }
+  &:hover .courses__certificate--icon {
+    font-variation-settings: "FILL" 0;
+  }
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 1;
+  @include transition(font-variation-settings, $duration, $timing-function);
+}
+.header__nav--container {
+  position: $relative;
+  @include display-flex($display-flex, $align-items);
+  justify-content: $flex-end;
+  height: 65px;
+  @extend %overflow-hidden;
+}
+nav {
+  position: $absolute;
+  left: -$one-hundred;
+  top: $fifty;
+  width: calc(100% - 2 * $width-icon-menu);
+  @include transform($translate-y, -59%);
+  @include transition(all, 2s, cubic-bezier(0.175, 0.885, 0.32, 1.275));
+}
+.nav__list {
+  display: $display-flex;
+  justify-content: center;
+  gap: 15px;
+  list-style: $none;
+  @extend %margin-zero;
+  @extend %padding-zero;
+  li {
+    margin: inherit;
+  }
+}
+.icon-menu {
+  display: $display-flex;
+  flex-direction: column;
+  gap: 3px;
+  width: $width-icon-menu;
+  cursor: pointer;
+}
+.icon-menu__line {
+  height: 2px;
+  background-color: $black;
+  @include transition(all, 0.5s, $timing-function);
+}
+.show-nav .icon-menu__line:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.show-nav .icon-menu__line:nth-child(2) {
+  @extend %opacity-zero;
+}
+.show-nav .icon-menu__line:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+.nav__link {
+  @include link();
+  font-size: 12px;
+  &:hover {
+    opacity: 0.5;
+  }
+}
+.show-nav ~ nav {
+  left: $fifty;
+  transform: translate(-$fifty, -59%);
+}
+.anchor-wrapper {
+  position: fixed;
+  display: $none;
+  bottom: 26px;
+  right: 10px;
+  width: 100%;
+}
+.anchor-container {
+  display: $display-flex;
+  justify-content: $flex-end;
+  @extend %max-width;
+  min-width: 200px;
+  @extend %margin-auto;
+  @extend %bottom-zero;
+  a {
+    @include display-flex($display-flex, $align-items);
+    justify-content: center;
+    width: $thirty;
+    height: $thirty;
+    box-shadow: 2px 2px 4px $black;
+    border-radius: $fifty;
+    &:hover {
+      box-shadow: 1px 1px 2px $black;
+    }
+  }
+}
+.show-shadow {
+  display: $display-block;
+}
+.courses__title--name {
+  white-space: nowrap;
+}
+.svg-anchor {
+  animation: translate 5s linear infinite;
+}
+@keyframes translate {
+  from {
+    @include transform($translate-y, $zero);
+  }
+  25% {
+    @include transform($translate-y, 1px);
+  }
+  50% {
+    @include transform($translate-y, $zero);
+  }
+  75% {
+    @include transform($translate-y, -1px);
+  }
+  to {
+    @include transform($translate-y, $zero);
+  }
+}
+
+@media (max-width: 960px) {
+  .courses__certificate--link:hover::after {
+    opacity: 0;
+  }
+  body {
+    zoom: $one-hundred;
+  }
+}
+@media (max-width: 600px) {
+  body {
+    zoom: 86%;
+  }
+  .link {
+    &:hover::before {
+      @include transform($translate-x, $one-hundred);
+    }
+  }
+}
+@media (max-width: 430px) {
+  .show-shadow {
+    display: $none;
+  }
+  footer {
+    padding-right: $zero;
+  }
+  .nav__list {
+    gap: 5px;
+  }
+}
