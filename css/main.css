@@ -435,6 +435,9 @@ nav {
   body {
     zoom: 100%;
   }
+  .link-rsschool:hover a {
+    transform: rotate(0deg) scale(1);
+  }
 }
 @media (max-width: 600px) {
   body {
