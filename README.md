@@ -11,3 +11,4 @@
 - [**calendar**](https://shchuka-vladimir.github.io/it-academy-course-javascript/homework_9/) (HTML, CSS, JS)
 - [**Star Wars**](https://shchuka-vladimir.github.io/js-course-project/) (HTML, CSS, JS, REST API)
 - [**Rick and Morty**](https://shchuka-vladimir.github.io/rickandmorty/index.html) (HTML, SCSS, JS, REST API)
+- [**house of gambling**](https://shchuka-vladimir.github.io/house-of-gambling/) (HTML, CSS, JS)
