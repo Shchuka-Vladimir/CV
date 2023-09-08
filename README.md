@@ -10,3 +10,4 @@
 - [**timer**](https://shchuka-vladimir.github.io/it-academy-course-javascript/homework_8/) (HTML, CSS, JS)
 - [**calendar**](https://shchuka-vladimir.github.io/it-academy-course-javascript/homework_9/) (HTML, CSS, JS)
 - [**Star Wars**](https://shchuka-vladimir.github.io/js-course-project/) (HTML, CSS, JS, REST API)
+- [**Rick and Morty**](https://shchuka-vladimir.github.io/rickandmorty/index.html) (HTML, SCSS, JS, REST API)
